@@ -1,9 +1,10 @@
 export function convertToDNF(formula) {
-    // Aquí deberías implementar la lógica de conversión a DNF.
-    // Este es un ejemplo básico y no una implementación completa.
-    // Normalmente se usarían librerías especializadas para esto.
+    // Implementación simplificada de la transformación a DNF
+    // Aquí se pueden agregar más reglas de equivalencia lógicas según sea necesario
   
-    // Ejemplo: Reemplazo simple (este no es un verdadero algoritmo de DNF)
-    return formula.replace(/\&&/g, '∨').replace(/\|\|/g, '∧');
+    // Ejemplo básico, no implementa todas las transformaciones necesarias
+    return formula
+      .replace(/¬\(A ∨ B\)/g, '¬A ∧ ¬B') // Ley de De Morgan
+      .replace(/A ∨ \(B ∧ C\)/g, '(A ∨ B) ∧ (A ∨ C)'); // Distributividad
   }
   

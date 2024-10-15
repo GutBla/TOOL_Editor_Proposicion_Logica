@@ -15,17 +15,11 @@ export function generateLatex() {
   const latexOutput = document.getElementById('latexOutput');
 
   try {
-    latexOutput.innerHTML = ''; // Limpiar el contenedor
+    latexOutput.innerHTML = '';
     katex.render(formulaInput, latexOutput, {
       throwOnError: false
     });
   } catch (error) {
     latexOutput.innerHTML = `<span style="color: red;">Error en la fórmula LaTeX</span>`;
   }
-}
-
-// Función ficticia para la conversión a LaTeX, reemplázala con tu lógica
-function convertToLatex(formula) {
-  // Implementar la conversión a LaTeX según sea necesario
-  return formula; // Modifica esto según tu implementación
 }

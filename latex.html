@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Símbolos a LaTeX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Símbolos a LaTeX</h1>
+        <p>Introduce una expresión lógica para obtener su representación en LaTeX:</p>
+        <input type="text" id="simbolo" placeholder="Introduce una expresión (ej: a ∧ b)">
+        <button onclick="convertirSimbolo()">Convertir a LaTeX</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        // Diccionario de conversión de símbolos a LaTeX
+        const conversionLatex = {
+            '¬': '\\neg',                   
+            '∧': '\\land',                  
+            '∨': '\\lor',                   
+            '⊻': '\\oplus',                 
+            '→': '\\rightarrow',            
+            '↔': '\\leftrightarrow',        
+            '=': '=',                       
+            '≠': '\\neq',                   
+            ':': ':',                       
+            '∴': '\\therefore',             
+            '≡': '\\equiv',                 
+            '⊨': '\\models',                
+            '(': '(',                       
+            ')': ')',                       
+            '{': '\\{',                     
+            '}': '\\}',                     
+            '[': '[',                       
+            ']': ']',                       
+            '⟶': '\\longrightarrow',        
+            'Ɐ': '\\forall',                
+            'Ǝ': '\\exists',                
+            '⟹': '\\Rightarrow',            
+        };
+
+        // Función para convertir una expresión a su equivalente en LaTeX
+        function convertirSimbolo() {
+            const simbolo = document.getElementById("simbolo").value;
+            
+            // Recorremos cada carácter de la expresión y reemplazamos si existe en el diccionario
+            let resultadoLatex = '';
+            for (let i = 0; i < simbolo.length; i++) {
+                const caracter = simbolo[i];
+                resultadoLatex += conversionLatex[caracter] || caracter;  // Si no existe, usar el mismo carácter
+            }
+
+            document.getElementById("resultado").textContent = `La expresión '${simbolo}' en LaTeX es: ${resultadoLatex}`;
+        }
+    </script>
+</body>
+</html>
+
