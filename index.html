@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Proposiciones Lógicas</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-fpFByFgF/8U8J7XoBxhOp9C2vf1NxJ1j35KugYY+zwhs7luIhgfZ1rbHgQ3TzFJH" crossorigin="anonymous">
+  <link rel="icon" href="images/calculadora.png" type="image/png">
+</head>
+<body>
+  <div class="container">
+    <h1>Proposiciones Lógicas</h1>
+
+    <h2>Símbolos</h2>
+    <div id="symbolsContainer"></div>
+
+    <h2>Letra Minúscula y Mayúscula</h2>
+    <div class="letters-container">
+      <div id="lowercaseLetters"></div>
+      <div id="uppercaseLetters"></div>
+    </div>
+
+    <h2>Valores Lógicos</h2>
+    <button id="trueBtn">V</button>
+    <button id="falseBtn">F</button>
+
+    <h2>Fórmula</h2>
+    <textarea id="formulaInput" placeholder="Escribe tu fórmula lógica..."></textarea>
+    <div class="button-group">
+      <button id="clearBtn">Borrar</button>
+      <button id="copyBtn">Copiar</button>
+      <button id="latexBtn">Mostrar LaTeX</button>
+    </div>
+
+    <h2>Resultado en LaTeX</h2>
+    <div id="latexOutput"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-i3vK0SBYF1cSpq2HHLxPh0TtW4ViE7rUlzU7j3pS3h4/8W0Ub7lPtp1c99Xr7WKP" crossorigin="anonymous"></script>
+  <script src="scripts/main.js" type="module"></script>
+</body>
+</html>
