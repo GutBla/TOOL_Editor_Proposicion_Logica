@@ -1,5 +1,3 @@
-// scripts/main.js
-
 import { renderSymbols } from './symbols.js';
 import { renderUppercaseLetters, renderLowercaseLetters } from './letters.js';
 import { copyToClipboard, clearFormula } from './utils.js';
